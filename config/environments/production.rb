@@ -89,6 +89,6 @@ config.action_mailer.smtp_settings = {
   user_name:            ENV['GMAIL_USERNAME'],
   password:             ENV['GMAIL_PASSWORD'],
   authentication:       :login,
-  enable_starttls_auto: true
+  enable_starttls_auto: false
 }
 end
