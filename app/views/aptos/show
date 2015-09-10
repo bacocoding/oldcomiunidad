@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage2">
+  <h1 style = "color: white">Bienvenido a <%=@apto.conjunto.nombre_conjunto%></h1>
+  <p style = "color: white">Dirección Porteria: <%=@apto.conjunto.direccion_conjunto%></p>
+  <p style = "color: white">Telefono Porteria: <%=@apto.conjunto.tel_conjunto%></p>
+  
+  </div>
+  <div class="panel panel-info">
+      <div class="panel-heading text-left"><h4>Información de tu Unidad:</h4></div>
+      <div class="panel-body"><%=simple_format(@apto.conjunto.info)%></div>
+    </div>
+    <div class="panel panel-success">
+      <div class="panel-heading text-left"><h4>Información de tu Apartamento:</h4><h4><%= link_to "Actualizar Contraseña", '/sessions/edit' %></h4></div>
+  <div class="panel-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Apartamento</th>
+        <th>Habitantes</th>
+        <th>Email</th>
+        <th>Email secundario</th>
+        <th>Empleada</th>
+        <th>Placa carro 1</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%=@apto.num_apto%></td>
+        <td><%=@apto.num_residentes%></td>
+        <td><%=@apto.email1%></td>
+        <td><%=@apto.email2%></td>
+        <td><%=@apto.nombre_empleada1%></td>
+        <td><%=@apto.placa_carro1%></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <h4><%=link_to "Actualizar Información de tu apartamento", edit_apto_path(@apto.id) %></h4>
+  </div>
+  </div>
+  
+   <div class="panel panel-warning">
+      <div class="panel-heading text-left"><h4>Información de tu Administración:</h4><h4><%= link_to "Enviar Correo", '/correos/new' %></h4></div>
+      <div class="panel-body">
+      <p><b>Empresa:</b> <%=@apto.conjunto.empresa_admin%>, <b>Telefono:</b> <%= @apto.conjunto.tel_admin %>, <b>Dirección:</b> <%=@apto.conjunto.direccion_admin %></p>
+      <p><b>Administrador:</b> <%=@apto.conjunto.nombre_administrador%>, <b>Email:</b> <%= @apto.conjunto.email_admin%></p>
+      <p><b>Empresa de Vigilancia:</b> <%=@apto.conjunto.empresa_vigilancia%>, <b>Empresa de Aseo y Mantenimiento: </b> <%=@apto.conjunto.empresa_servicios%></p>
+      </div>
+    </div>
+
+  <div class="panel panel-danger">
+    <div class="panel-heading text-left"><h4>Información de Personal Contratista:</h4></div>
+      <div class="panel-body">
+      <% @servicio.each do |p| %>
+        <div class="dropdown">
+           <button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Foto
+           <span class="caret"></span></button>
+           <ul class="dropdown-menu">
+           <%=image_tag  p.imagen_contratista, :height => "100", :width => "100", :class => "img-thumbnail"%>
+           </ul><b>Nombre: </b> <%=p.nombre_contratista%>, <b>Cedula: </b> <%=p.cedula_contratista%>, <b>Trabajo: </b> <%=p.categoria%>
+        </div> 
+      <% end %>
+  </div>
+
+</div>

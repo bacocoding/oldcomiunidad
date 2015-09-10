@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage3">
+        <h1 style = "color: white">comiunidad</h1>
+       
+        <%= link_to "Volver al Menu", '/sessions/menu' %>
+        <%= form_for(@apto) do |f| %>
+        <div class="form-group">
+      <%= f.text_field :num_apto, :placeholder => 'Numero Apartamento' %>
+      </div>
+      <div class="form-group">
+      <%= f.text_field :conjunto_id, :placeholder => 'Numero de Unidad' %>
+      </div>
+      <div class="form-group">
+      <%= f.password_field :password, :placeholder => 'Password' %>
+      </div>
+      <div class="form-group">
+      <%= f.submit "Crear Apto", :class => "form-btn" %>
+      </div>
+    <% end %>
+    
+         </div>
+</div>

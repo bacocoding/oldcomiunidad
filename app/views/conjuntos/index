@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage2">
+        <h1>comiunidad</h1>
+        </div>
+        <div class="panel panel-danger">
+    <div class="panel-heading text-left"><h4>Listado de Conjuntos en Comiunidad:</h4>
+    </div>
+      <div class="panel-body">
+        <ol>
+        <% @conjunto.each do |conjunto| %>
+        
+          <li><%= conjunto.nombre_conjunto %>
+          <%= link_to "Lista de Aptos", aptos_index_path(conjunto) %>
+          <%= link_to "Delete", conjunto_path(conjunto), method: "delete" %>
+          <%= conjunto.id%>
+          </li>
+        
+        <% end %>
+        </ol>
+        <%= link_to "Volver al Menu", '/sessions/menu' %>
+     </div> 
+ </div>

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage2">
+        <h1 style = "color: white">comiunidad</h1>
+        </div>
+        <div class="panel panel-danger">
+    <div class="panel-heading text-left"><h4>Listado de Apartamentos de <%=@conjunto.nombre_conjunto%>:</h4>
+    </div>
+      <div class="panel-body">
+        <ol>
+        
+        <% @apto.each do |apto| %>
+        <li>
+          <%= apto.num_apto %>
+          <%= link_to "Delete", apto_path(apto), method: "delete" %>
+        </li>
+        <% end %>
+        </ol>
+        <%= link_to "Volver al Menu", '/sessions/menu' %>
+      </div>
+ </div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage3">
+        <h1 style = "color: white">Comiunidad</h1>
+
+<%= form_for(:correo, url: correos_path) do |f| %>
+  <%= f.text_area :mensaje, :placeholder => 'Mensaje', :size => '60x7', :class => 'btn-lg h2'%>
+  <div>
+   
+      <%= f.submit "Enviar", :class => "form-btn tn-lg h2" %>
+      </div>
+  
+<% end %>
+
+</div>
+</div>

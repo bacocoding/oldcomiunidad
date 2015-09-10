@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage3">
+        <h1 style = "color: white">Comiunidad</h1>
+
+
+<%= form_for(@apto, :url => { :action => "update_password" } ) do |f| %>
+  <div class="form-group">
+  <%= f.text_field :password, :placeholder => 'Contraseña',:class => 'btn-lg h2' %>
+  </div>
+  <div class="form-group">
+  <%= f.text_field :password_confirmation, :placeholder => 'Confirmar Contraseña', :class => 'btn-lg h2' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Actualizar Contraseña", :class => "form-btn tn-lg h2"%>
+  </div>
+<% end %>
+</div>
+</div>

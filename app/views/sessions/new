@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage1">
+        <h1 style = "color: white">Comiunidad</h1>
+       
+        
+        <%= form_for(:session, url: login_path) do |f| %>
+        <div class="form-group">
+      <%= f.text_field :nombre_conjunto, :placeholder => 'Conjunto', :class => 'btn-lg h2' %>
+      </div>
+      <div class="form-group">
+      <%= f.text_field :num_apto, :placeholder => 'Apartamento', :class => 'btn-lg h2'%>
+      </div>
+      <%= f.password_field :password, :placeholder => 'Password',:class => 'btn-lg h2' %>
+      <div class="form-group">
+      <%= f.submit "Ingresar", :class => "form-btn tn-lg h2" %>
+      </div>
+    <% end %>
+    <% if flash[:notice] %>
+<div id="notice"><h3><kbd><%= flash[:notice] %></kbd></h3></div>
+<% end %>
+         </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage4">
+        <h1 style = "color: white">comiunidad</h1>
+        <h2 class="text-left">Menu de Creación</h2>
+        <h3 class="text-left"><%=link_to "1. Crear Conjunto", '/conjuntos/new' %></h3>
+        <h3 class="text-left"><%=link_to "2. Crear Apartamentos", '/aptos/new' %></h3>
+        <h3 class="text-left"><%=link_to "3. Listado de Conjuntos", '/conjuntos/index' %></h3>
+      </div>
+ </div>

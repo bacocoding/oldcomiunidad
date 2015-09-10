@@ -53,4 +53,24 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  root 'sessions#new'
+  get '/sessions/new' => 'sessions#new'
+  get '/sessions/menu' => 'sessions#menu'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  get '/sessions/destroy' => 'sessions#destroy'
+  get 'signup'  => 'aptos#new'
+  get '/conjuntos/index' => 'conjuntos#index'
+  get '/aptos/index/:id' => 'aptos#index', as: 'aptos_index'
+  get '/sessions/edit' => 'sessions#edit'
+  patch '/sessions' => 'sessions#update_password'
+  get '/correos/new' => 'correos#new'
+  get '/admincorreos/new/:id' => 'admincorreos#new', as: 'admincorreos_new'
+  
+  resources :admincorreos
+  resources :correos
+  resources :aptos
+  resources :conjuntos
+  resources :servicios
 end

@@ -1,0 +1,39 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#bgimage1{
+  background-image:url('https://s3-sa-east-1.amazonaws.com/comiunidadfotos/fotony.jpg');
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: sans-serif;
+  }
+  #bgimage2{
+    background-image:url('https://s3-sa-east-1.amazonaws.com/comiunidadfotos/lobby.jpg');
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: sans-serif;
+  }
+  #bgimage3{
+     background-image:url('https://s3-sa-east-1.amazonaws.com/comiunidadfotos/fotoapto.jpg');
+  height: 900px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: sans-serif;
+  }
+  #bgimage4{
+     background-image:url('https://s3-us-west-2.amazonaws.com/comiunidadbucket/photobridgetower.jpg');
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: sans-serif;
+  }
+  .container{
+    background-color:black;
+  }

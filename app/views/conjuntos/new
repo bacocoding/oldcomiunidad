@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage2">
+        <h1 style = "color: white">comiunidad</h1>
+       
+        <%= link_to "Volver al Menu", '/sessions/menu' %>
+        <%= form_for(@conjunto) do |f| %>
+        <div class="form-group">
+      <%= f.text_field :nombre_conjunto, :placeholder => 'Nombre del Conjunto' %>
+      </div>
+      <div class="form-group">
+      <%= f.text_field :empresa_admin, :placeholder => 'Empresa de Administración' %>
+      </div>
+      <div class="form-group">
+      <%= f.submit "Crear Conjunto", :class => "form-btn" %>
+      </div>
+    <% end %>
+    
+         </div>
+</div>

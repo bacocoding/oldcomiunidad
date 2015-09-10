@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage3">
+  <div class= "text-right "><h3><%= link_to "Actualizar Contraseña", '/sessions/edit' %></h3></div>
+        <h1 style = "color: white">Comiunidad</h1>
+       
+    
+      
+    <%= form_for(@apto) do |f| %>
+    
+   
+      <%= f.text_field :num_residentes, :placeholder => 'Numero de Residentes', :class => 'btn-lg h2' %> 
+      
+      <%= f.email_field :email1, :placeholder => 'Email', :class => 'btn-lg h2' %> 
+      
+      <%= f.email_field :email2, :placeholder => 'Email alterno', :class => 'btn-lg h2' %> 
+      
+      <%= f.email_field :email_propietario, :placeholder => 'Email Propietario', :class => 'btn-lg h2' %> 
+      
+      <%= f.text_field :placa_carro1, :placeholder => 'Placa Carro 1', :class => 'btn-lg h2' %>
+ 
+      <%= f.text_field :placa_carro2, :placeholder => 'Placa Carro 2', :class => 'btn-lg h2' %>
+    
+      <%= f.text_field :placa_carro3, :placeholder => 'Placa Carro 3', :class => 'btn-lg h2' %>
+      
+      <%= f.text_field :nombre_empleada1, :placeholder => 'Nombre de Empleada 1' , :class => 'btn-lg h2' %>
+      
+      <%= f.text_field :cedula_empleada1, :placeholder => 'Cedula de Empleada 1', :class => 'btn-lg h2' %>
+     
+      <%= f.text_field :nombre_empleada2, :placeholder => 'Nombre de Empleada 2', :class => 'btn-lg h2' %>
+      
+      <%= f.text_field :cedula_empleada2, :placeholder => 'Cedula de Empleada 2', :class => 'btn-lg h2' %>
+      
+      
+      <div>
+   
+      <%= f.submit "Actualizar Info", :class => "form-btn tn-lg h2" %>
+      </div>
+    <% end %>
+  
+  </div>
+</div>

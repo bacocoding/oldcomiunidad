@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="jumbotron" id="bgimage3">
+  <h1 style = "color: white">Bienvenido a <%=@conjunto.nombre_conjunto%></h1>
+  <div class="well">
+  <% @servicio.each do |t| %>
+    <ul class="text-left">
+    <%= link_to "Borrar", servicio_path(t), method: "delete" %>
+    <%= link_to "Editar", edit_servicio_path(t.id) %>
+    <%= t.nombre_contratista %>
+    <%= t.cedula_contratista %>
+    </ul>
+  <% end %>
+  </div>
+  </div>
