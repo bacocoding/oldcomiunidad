@@ -88,7 +88,7 @@ config.action_mailer.default_url_options = { host: 'www.comiunidad.com' }
     domain: "www.comiunidad.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name:            ENV['GMAIL_USERNAME'],
-    password:             ENV['GMAIL_PASSWORD'],
+    user_name:            'comiunidad@gmail.com',
+    password:             'Benja23Vale01',
   }
 end
