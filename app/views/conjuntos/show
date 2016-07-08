@@ -1,85 +1,171 @@
-<div class="container">
-  <div class="jumbotron" id="bgimage2">
-  <h1 style = "color: white">Bienvenido a <%=@conjunto.nombre_conjunto%></h1>
-  <p style = "color: white">Dirección Porteria: <%=@conjunto.direccion_conjunto%></p>
-  <p style = "color: white">Telefono Porteria: <%=@conjunto.tel_conjunto%></p>
-  </div>
-  
-   <div class="panel panel-info">
-      <div class="panel-heading text-left"><h4>Mensaje para la Unidad:</h4></div>
-      <div class="panel-body"><%=simple_format(@conjunto.info)%>
-      <h4><%=link_to "Actualizar Información", edit_conjunto_path(@conjunto.id) %></h4>
-    </div>
-    </div>
-    <div class="panel panel-success">
-      <div class="panel-heading text-left"><h4>Información de la Unidad:</h4></div>
-  <div class="panel-body">
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Administración</th>
-        <th>Email</th>
-        <th>Telefono</th>
-        <th>Dirección</th>
-        <th>Administrador</th>
-        <th>Vigilancia</th>
-        <th>Mantenimiento</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><%=@conjunto.empresa_admin%></td>
-        <td><%=@conjunto.email_admin%></td>
-        <td><%=@conjunto.tel_admin%></td>
-        <td><%=@conjunto.direccion_admin%></td>
-        <td><%=@conjunto.nombre_administrador%></td>
-        <td><%=@conjunto.empresa_vigilancia%></td>
-        <td><%=@conjunto.empresa_servicios%></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <h4><%=link_to "Actualizar Información", edit_conjunto_path(@conjunto.id) %></h4>
-  </div>
-  </div>
-  
+<body class="landing">
 
-  
-  <div class="panel panel-danger">
-    <div class="panel-heading text-left"><h4>Información de Personal Contratista:</h4>
-    </div>
-      <div class="panel-body">
-      <h4><%= link_to "Crear nuevo contratista", '/servicios/new' %></h4>
-      <% @servicio.each do |t| %>
-        <div class="dropdown">
+    <!-- Page Wrapper -->
+      <div id="page-wrapper">
+
+        <!-- Banner -->
+          <section id="banner">
+            <div class="inner">
+              <h2>Comiunidad</h2><br />
+              <h3>Bienvenido a <%=@conjunto.nombre_conjunto%></h3><br />
+              <p>Dirección Porteria: <%=@conjunto.direccion_conjunto%><br />
+              Telefono Porteria: <%=@conjunto.tel_conjunto%><br />
+              Empresa de Administración: <%=@conjunto.empresa_admin%><br />
+              Telefono Administración: <%=@conjunto.tel_admin%>
+              </p>
+              
+          </section>
+
+        <!-- One -->
+          <section id="one" class="wrapper style1 special">
+            <div class="inner">
+              <header class="major">
+                <h2>MENSAJE PARA LA UNIDAD</h2>
+                <p> <%=@conjunto.info%></p>
+                <h2 class="button special"><%=link_to "Actualizar Información", edit_conjunto_path(@conjunto.id) %></h2>
+              </header>
+              </div>
+          </section>
+
+        <!-- Two -->
+          <section id="two" class="wrapper alt style2">
+            <section class="spotlight">
+              <div class="image"><img src="/assets/bench.jpg" alt="" /></div><div class="content">
+                <h2>Información de la Unidad</h2>
+                <p>Administración: <%=@conjunto.empresa_admin%><br />
+                email: <%=@conjunto.email_admin%> <br /> 
+                Telefono: <%=@conjunto.tel_admin%> <br />
+                Dirección: <%=@conjunto.direccion_admin%> <br />
+                Administrador: <%=@conjunto.nombre_administrador%> <br />
+                Vigilancia: <%=@conjunto.empresa_vigilancia%> <br />
+                Mantenimiento: <%=@conjunto.empresa_servicios%> <br />
+                <h4 class="button special"><%=link_to "Actualizar Información", edit_conjunto_path(@conjunto.id) %></h4>
+                </p>
+              </div>
+
+            </section>
+            <section class="spotlight">
+              <div class="image"><img src="/assets/livingroom.jpg" alt="" /></div><div class="content">
+                <h2>Información del personal contratista</h2><br />
+                <h2 class="button special"><%= link_to "Crear nuevo contratista", '/servicios/new' %></h2><br />
+                <% @servicio.each do |t| %>
+                <div class="dropdown">
            <button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Foto
            <span class="caret"></span></button>
            <ul class="dropdown-menu">
            <%=image_tag  t.imagen_contratista, :height => "100", :width => "100", :class => "img-thumbnail"%>
-           </ul><b>Nombre: </b> <%=t.nombre_contratista%>, <b>Cedula: </b> <%=t.cedula_contratista%>, <b>Trabajo: </b> <%=t.categoria%>
-        </div> 
+           </ul><%=t.nombre_contratista%>, <b>CC: </b> <%=t.cedula_contratista%>, <%=t.categoria%>
+        
+        <br />
+        </div>
       <% end %>
-      </div>
-      <h4><%= link_to "Editar/Borrar Contratista", '/servicios/show' %></h4>
+       
+      <h2 class="button special"><%= link_to "Editar/Borrar Contratista", '/servicios/show' %></h2>
+              </div>
+            </section>
+
+
+            <section class="spotlight">
+              <div class="image"><img src="/assets/children.jpg" alt="" /></div><div class="content">
+                <h2>Listado de Apartamentos</h2>
+                <%=link_to "Enviar Correo a Todo el Edificio", admincorreos_new_path(@apto.id)%>
+
+
+<% @interior.each do |x| %>
       
+        <div class="dropdown"> <%=x.num_apto%> <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Información<span class="caret"></span></button> <%=link_to "Enviar Correo", admincorreos_new_path(x.id)%>
+    <ul class="dropdown-menu">
+      <li><a>Habitantes:<%=x.num_residentes%></a></li>
+      <li><a>email: <%=x.email1%></a></li>
+      <li><a>email2: <%=x.email2%></a></li>
+      <li><a>Propietario: <%=x.email_propietario%></a></li>
+      <li><a>Placa carro: <%=x.placa_carro1%></a></li>
+      <li><a>Empleada: <%=x.nombre_empleada1%></a></li>
+    </ul>
   </div>
-  
-  <div class="panel panel-info">
-      <div class="panel-heading text-left"><h4>Listado de Apartamentos:</h4></div>
-      <div class="panel-body">
-      
-     
-     <% @interior.each do |x| %>
-      <tr>
-      <ul>
-        <td><%=x.num_apto%></td>
-        <td><%='Información'%></td>
-        <td><%=link_to "Enviar Correo", admincorreos_new_path(x.id) %></td>
-      </tr>
-      </ul>
+        
+        <br />
       <% end %>
-  
+
+
+
+              </div>
+            </section>
+          </section>
+
+        <!-- Three -->
+          <section id="three" class="wrapper style3 special">
+            <div class="inner">
+              <header class="major">
+                <h2>Accumsan mus tortor nunc aliquet</h2>
+                <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+                fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+              </header>
+              <ul class="features">
+                <li class="icon fa-paper-plane-o">
+                  <h3>Arcu accumsan</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-laptop">
+                  <h3>Ac Augue Eget</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-code">
+                  <h3>Mus Scelerisque</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-headphones">
+                  <h3>Mauris Imperdiet</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-heart-o">
+                  <h3>Aenean Primis</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-flag-o">
+                  <h3>Tortor Ut</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+        <!-- CTA -->
+          <section id="cta" class="wrapper style4">
+            <div class="inner">
+              <header>
+                <h2>Arcue ut vel commodo</h2>
+                <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+              </header>
+              <ul class="actions vertical">
+                <li><a href="#" class="button fit special">Activate</a></li>
+                <li><a href="#" class="button fit">Learn More</a></li>
+              </ul>
+            </div>
+          </section>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <ul class="icons">
+              <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+              <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+              <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+              <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+              <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+              <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+          </footer>
+
       </div>
-    </div>
-  
-</div>
+
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.scrollex.min.js"></script>
+      <script src="assets/js/jquery.scrolly.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="assets/js/main.js"></script>
+

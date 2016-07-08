@@ -2,23 +2,19 @@
   <div class="jumbotron" id="bgimage3">
         <h1 style = "color: white">Comiunidad</h1>
      
-        <div class="center">
+        
         <%= form_for(@servicio) do |f| %>
-      <div> 
+      
       <%= f.text_field :nombre_contratista, :placeholder => 'Nombre', :class => 'btn-lg h2' %>
-      </div>
-      <div>
+      
       <%= f.text_field :cedula_contratista, :placeholder => 'Cedula', :class => 'btn-lg h2' %>
-      </div>
-      <div>
-      <%= f.text_field :imagen_contratista, :placeholder => 'Imagen', :class => 'btn-lg h2' %>
-      </div>
-      <div>
+      
+     <div style="text-align:left">Cargar Foto</div><%= f.file_field :imagen_contratista, :class => 'button special' %>
+      
       <%= f.text_field :categoria, :placeholder => 'Categoria', :class => 'btn-lg h2' %>
-     </div>
-     <div>
-      <%= f.submit "Crear", :class => "form-btn btn-lg h2" %>
-      </div>
+     
+      <%= f.submit "Crear", :class => "button special" %>
+      
     <% end %>
     </div>
          </div>

@@ -1,13 +1,17 @@
 development:
   adapter: postgresql
-  database: my_database_development
+  database: comiunidad_db_dev
+  username: juanvelasquez
+  password: valentina
   pool: 5
   timeout: 5000
   host: localhost
 
 test:
   adapter: postgresql
-  database: my_database_test
+  database: comiunidad_db_test
+  username: juanvelasquez
+  password: valentina
   pool: 5
   timeout: 5000
   host: localhost

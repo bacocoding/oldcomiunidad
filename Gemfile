@@ -46,6 +46,8 @@ end
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'autoprefixer-rails'
 gem "figaro", "~> 0.7.0"
+gem 'carrierwave', '~> 0.9'
+gem 'bootstrap-filestyle-rails'
 
 group :production do
     # Use PostgreSQL as the database for Active Record

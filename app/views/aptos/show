@@ -1,3 +1,165 @@
+<body class="landing">
+
+    <!-- Page Wrapper -->
+      <div id="page-wrapper">
+
+        <!-- Banner -->
+          <section id="banner">
+            <div class="inner">
+              <h2>Comiunidad</h2><br />
+              <h3>Bienvenido a <%=@apto.conjunto.nombre_conjunto%></h3><br />
+              <p>Dirección Porteria: <%=@apto.conjunto.direccion_conjunto%><br />
+              Telefono Porteria: <%=@apto.conjunto.tel_conjunto%><br />
+              Empresa de Administración: <%=@apto.conjunto.empresa_admin%><br />
+              Telefono Administración: <%= @apto.conjunto.tel_admin %>
+              </p>
+              
+          </section>
+
+        <!-- One -->
+          <section id="one" class="wrapper style1 special">
+            <div class="inner">
+              <header class="major">
+                <h2>INFORMACIÓN IMPORTANTE DE TU UNIDAD</h2>
+                <p> <%=@apto.conjunto.info%></p>
+              </header>
+              </div>
+          </section>
+
+        <!-- Two -->
+          <section id="two" class="wrapper alt style2">
+            <section class="spotlight">
+              <div class="image"><img src="/assets/bench.jpg" alt="" /></div><div class="content">
+                <h2>Información de tu Administración</h2>
+                <p>Administración: <%=@apto.conjunto.empresa_admin%><br />
+                email: <%=@apto.conjunto.email_admin%> <br /> 
+                Telefono: <%=@apto.conjunto.tel_admin%> <br />
+                Dirección: <%=@apto.conjunto.direccion_admin%> <br />
+                Administrador: <%=@apto.conjunto.nombre_administrador%> <br />
+                Empresa de Vigilancia: <%=@apto.conjunto.empresa_vigilancia%> <br />
+                Empresa de Mantenimiento: <%=@apto.conjunto.empresa_servicios%> <br />
+                <h2 class="button special"><%= link_to "Enviar Correo", '/correos/new' %></h2>
+                </p>
+              </div>
+
+            </section>
+            <section class="spotlight">
+              <div class="image"><img src="/assets/livingroom.jpg" alt="" /></div><div class="content">
+                <h2>Información de tu Apartamento</h2>
+                <p class="button special"><%=link_to "Actualizar Información", edit_apto_path(@apto.id) %></p>
+                <p>Apartamento: <%=@apto.num_apto%><br />
+                Habitantes: <%=@apto.num_residentes%><br />
+                email: <%=@apto.email1%><br />
+                email 2: <%=@apto.email2%><br />
+                Empleada: <%=@apto.nombre_empleada1%><br />
+                Placa carro: <%=@apto.placa_carro1%><br />
+                <p class="button special"><%= link_to "Actualizar Contraseña", '/sessions/edit' %></p>
+                
+              </div>
+            </section>
+
+            <section class="spotlight">
+              <div class="image"><img src="/assets/children.jpg" alt="" /></div><div class="content">
+
+              <h2>Información del personal contratista</h2>
+                
+                <% @servicio.each do |t| %>
+                <div class="dropdown">
+           <button class="btn btn-link btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Foto
+           <span class="caret"></span></button>
+           <p class="dropdown-menu">
+           <%=image_tag  t.imagen_contratista, :height => "100", :width => "100", :class => "img-thumbnail"%>
+           </p><%=t.nombre_contratista%>, <b>CC: </b> <%=t.cedula_contratista%>, <%=t.categoria%>
+      <% end %>
+      
+      </div> 
+      <br />
+            </div>
+            </section>
+          </section>
+
+        <!-- Three -->
+          <section id="three" class="wrapper style3 special">
+            <div class="inner">
+              <header class="major">
+                <h2>Accumsan mus tortor nunc aliquet</h2>
+                <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
+                fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+              </header>
+              <ul class="features">
+                <li class="icon fa-paper-plane-o">
+                  <h3>Arcu accumsan</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-laptop">
+                  <h3>Ac Augue Eget</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-code">
+                  <h3>Mus Scelerisque</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-headphones">
+                  <h3>Mauris Imperdiet</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-heart-o">
+                  <h3>Aenean Primis</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+                <li class="icon fa-flag-o">
+                  <h3>Tortor Ut</h3>
+                  <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+        <!-- CTA -->
+          <section id="cta" class="wrapper style4">
+            <div class="inner">
+              <header>
+                <h2>Arcue ut vel commodo</h2>
+                <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+              </header>
+              <ul class="actions vertical">
+                <li><a href="#" class="button fit special">Activate</a></li>
+                <li><a href="#" class="button fit">Learn More</a></li>
+              </ul>
+            </div>
+          </section>
+
+        <!-- Footer -->
+          <footer id="footer">
+            <ul class="icons">
+              <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+              <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+              <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+              <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+              <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+              <li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+          </footer>
+
+      </div>
+
+    <!-- Scripts -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/jquery.scrollex.min.js"></script>
+      <script src="assets/js/jquery.scrolly.min.js"></script>
+      <script src="assets/js/skel.min.js"></script>
+      <script src="assets/js/util.js"></script>
+      <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="assets/js/main.js"></script>
+
+
+
+
+
+
+
 <div class="container">
   <div class="jumbotron" id="bgimage2">
   <h1 style = "color: white">Bienvenido a <%=@apto.conjunto.nombre_conjunto%></h1>
@@ -9,6 +171,7 @@
       <div class="panel-heading text-left"><h4>Información de tu Unidad:</h4></div>
       <div class="panel-body"><%=simple_format(@apto.conjunto.info)%></div>
     </div>
+
     <div class="panel panel-success">
       <div class="panel-heading text-left"><h4>Información de tu Apartamento:</h4><h4><%= link_to "Actualizar Contraseña", '/sessions/edit' %></h4></div>
   <div class="panel-body">

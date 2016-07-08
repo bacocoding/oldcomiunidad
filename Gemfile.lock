@@ -43,11 +43,17 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-filestyle-rails (1.1.2)
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
     builder (3.2.2)
     byebug (6.0.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -151,8 +157,10 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bcrypt (~> 3.1.7)
+  bootstrap-filestyle-rails
   bootstrap-sass (~> 3.3.4.1)
   byebug
+  carrierwave (~> 0.9)
   coffee-rails (~> 4.1.0)
   figaro (~> 0.7.0)
   jbuilder (~> 2.0)

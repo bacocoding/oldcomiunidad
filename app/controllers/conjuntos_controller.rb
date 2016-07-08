@@ -1,4 +1,4 @@
-class ConjuntosController < ApplicationController
+  class ConjuntosController < ApplicationController
 
  def new
   @conjunto = Conjunto.new
@@ -12,7 +12,8 @@ class ConjuntosController < ApplicationController
   @apto = Apto.find(session[:apto_id])
   @conjunto = Conjunto.find(@apto.conjunto_id)
   @servicio = Servicio.where(conjunto_id: @apto.conjunto_id).order(:categoria)
-  @interior = Apto.where(conjunto_id: @apto.conjunto_id).where.not(num_apto: "admin").order(:num_apto)
+  @interior = Apto.where(conjunto_id: @apto.conjunto_id).where.not(num_apto: "admin").order(:num_apto) 
+  
  end
  
  def destroy
